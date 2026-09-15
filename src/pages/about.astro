@@ -1,5 +1,14 @@
 ---
 const pageTitle = "Nosotros";
+
+const identity = {
+	name: "Sara",
+	country: "España",
+	occupation: "Diseño Web",
+	hobbies: ["fotografia", "balón mano", "surf"],
+};
+
+const skill = ["HTML", "CSS", "JavaScript", "Astro"];
 ---
 
 <html lang="en">
@@ -16,6 +25,19 @@ const pageTitle = "Nosotros";
         <a href="/about">Nosotros</a>
         <a href="/blog">Blog</a>
 
-		<h1>Sobre Nosotros</h1>
+		<h1>Sobre {pageTitle}</h1>
+		<h2>...  nuestro nuevo sitio Astro</h2>
+
+		<p>Estoy haciendo un tutorial introductorio de Astro</p>
+		<p>Este sitio se actualizará cuando complete el tutorial.</p>
+
+		<p>Algo sobre mi:</p>
+		<ul>
+			<li>Mi nombre es: {identity.name}</li>
+			<li>Yo vivo en {identity.country} trabajo como {identity.occupation}.</li>
+			{identity.hobbies.length >= 2 &&
+				<li>Dos de mis hobbies son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+			}
+		</ul>
 	</body>
 </html>
