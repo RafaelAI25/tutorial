@@ -5,13 +5,13 @@ const identity = {
 	name: "Sara",
 	country: "España",
 	occupation: "Diseño Web",
-	hobbies: ["fotografia", "balón mano", "surf"],
+	hobbies: ["fotografia", "surf", "balón mano"],
 };
 
 const skill = ["HTML", "CSS", "JavaScript", "Astro"];
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -35,9 +35,18 @@ const skill = ["HTML", "CSS", "JavaScript", "Astro"];
 		<ul>
 			<li>Mi nombre es: {identity.name}</li>
 			<li>Yo vivo en {identity.country} trabajo como {identity.occupation}.</li>
-			{identity.hobbies.length >= 2 &&
+			{
+			identity.hobbies.length >= 2 &&
 				<li>Dos de mis hobbies son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
 			}
+		</ul>
+
+		<p>Mis habilidades son:</p>
+		<ul>
+			{
+				skill.map((skill) => <li>{skill}</li>)
+			}
+			
 		</ul>
 	</body>
 </html>
