@@ -1,5 +1,6 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "Nosotros";
@@ -24,7 +25,7 @@ const skill = ["HTML", "CSS", "JavaScript", "Astro"];
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <Navigation />
+        <Header />
 
 		<h1>Sobre {pageTitle}</h1>
 		<h2>...  nuestro nuevo sitio Astro</h2>
@@ -49,5 +50,7 @@ const skill = ["HTML", "CSS", "JavaScript", "Astro"];
 			}
 			
 		</ul>
+
+		<Footer />
 	</body>
 </html>

@@ -1,5 +1,5 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 ---
@@ -15,10 +15,20 @@ import '../styles/global.css';
 		<title>Astro</title>
 	</head>
 	<body>
-		<Navigation />
+		<Header />
 
 		<h1>Mi primera web en Astro</h1>
 
 		<Footer />
+
+
+		<script>
+			const menu = document.querySelector('.menu');
+
+			menu?.addEventListener('click', () => {
+				const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+				menu.setAttribute('aria-expanded', `${!isExpanded}`);
+			});
+		</script>
 	</body>
 </html>
